@@ -1,0 +1,2 @@
+# Documentation
+Daily record
