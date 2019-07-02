@@ -1,2 +1,2 @@
 # Documentation
-Daily record
+Daily record for asp.net
