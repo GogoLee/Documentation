@@ -35,6 +35,14 @@ default_type application/octet-stream;
 ``` nginx
 #虚拟主机定义
 server {
+  #监听端口
+  listen 80；
+  #访问域名
+  server_name localhost;
+  #编码格式,若网页格式与此不同,将被自动转码
+  charset koi8-r;
+  #虚拟主机访问日志定义
+  access_log logs/host.access.log main;
   
 }
 ```
