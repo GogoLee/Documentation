@@ -8,7 +8,7 @@
   
 ## 配置文件
 配置文件主要由四部分组成：main(全区设置),server(主机设置),upstream(负载均衡服务器设置),和location(URL匹配特定位置设置)。
-### 全局变量
+### 1）全局变量
 ``` nginx
 #Nginx的worker进程运行用户以及用户组
 #user nobody nobody;
@@ -32,7 +32,7 @@ eg:
 # * hard nofile 65535
 worker_rlimit_nofile 65535;
 ```
-### 事件配置
+### 2）事件配置
 ``` nginx
 events{
  #use [ kqueue | rtsig | epoll | /dev/poll | select | poll]; epoll模型是Linux 2.6以上版本内核中的高性能网络I/O模型,如果泡在FressBSD上面，就用kqueue模型。
@@ -44,7 +44,7 @@ events{
  #multi_accept on; 
 }
 ```
-### http参数
+### 3）http参数
 ``` nginx
 #文件扩展名与文件类型映射表
  include mime.types;
@@ -118,7 +118,7 @@ events{
  
 gzip_vary on;
 ```
-### 虚拟主机基本设置
+### 4）虚拟主机基本设置
 ``` nginx
 #虚拟主机定义
  server {
@@ -187,7 +187,7 @@ gzip_vary on;
    # }
  #}
 ```
-### nginx状态监控
+### 5）nginx状态监控
 ``` nginx
 #Nginx运行状态，StubStatus模块获取Nginx自启动的工作状态（编译时要开启对应功能）
  #location /NginxStatus {
@@ -203,7 +203,7 @@ gzip_vary on;
 访问：http://IP/NginxStatus(测试就不加密码验证相关) 
 
 ```
-### 反向代理
+### 6）反向代理
 ``` nginx
 #以下配置追加在HTTP的全局变量中
 #nginx跟后端服务器连接超时时间(代理连接超时)
